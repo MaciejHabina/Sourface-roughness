@@ -11,10 +11,12 @@ Ra = functions.Ra(data)
 Rq = functions.Rq(data)
 Rsk = functions.Rsk(Rq, data)
 Rku = functions.Rku(Rq, data)
-AverageLine = functions.AverageLine(data)           # strasznie długo liczy  tę linię średnią 
+AverageLine = functions.AverageLine(data)           # strasznie długo liczy  tę linię średnią
 # Rsm = functions.Rsm(data3)
 Rp = functions.Rp(AverageLine, data)
-
+Rv = functions.Rv(AverageLine, data)
+Rt = functions.Rt(data)
+Rz = functions.Rz(AverageLine, data)
 
 # print("Value of an average line is: ", AverageLine)
 
@@ -22,5 +24,9 @@ print("Ra: ", Ra)
 print("Rq: ", Rq)
 print("Rsk: ", Rsk)
 print("Rp: ", Rp)
+print("Rv: ", Rv)
+print("Rt: ", Rt)
+print("Rku: ", Rku)
 
+print("Rz: ", Rz)
 input()

@@ -115,6 +115,40 @@ def Rp(AverageLine, data):      # calculate value of Rp parameter for the chosen
     return round(Rp, 4)
 
 
+def Rv(AverageLine, data):
+    MinimalValue = min(data)
+    Rv = AverageLine - MinimalValue
+
+    return round(Rv, 4)
+
+
+def Rt(data):
+
+    MinimalValue = abs(min(data))
+    MaximalValue = abs(max(data))
+    Rt = MinimalValue + MaximalValue
+
+    return round(Rt, 4)
+
+
+def Rz(AverageLine, data):
+    NewList = []
+    Sum = 0
+
+    Values = sorted(data)
+    MinList = Values[0:5]
+    MaxList = Values[-6:-1]
+    NewList.extend(MinList)
+    NewList.extend(MaxList)
+
+    for value in NewList:
+        Sum = Sum + abs(value - AverageLine)
+
+    Rz = Sum / 5
+
+    return round(Rz, 4)
+
+
 """
 don't use data3
 
