@@ -1,6 +1,10 @@
 import math
 
 
+
+
+
+
 def OpeningFile(name):  # returns the input data as a tuple of height of roughness profile
     data = []
     with open(name, 'r') as file:
