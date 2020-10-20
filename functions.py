@@ -1,10 +1,5 @@
 import math
 
-
-
-
-
-
 def OpeningFile(name):  # returns the input data as a tuple of height of roughness profile
     data = []
     with open(name, 'r') as file:
@@ -16,6 +11,21 @@ def OpeningFile(name):  # returns the input data as a tuple of height of roughne
     del NewList
     return tuple(data)
 
+
+def OpeningFileLength(name):  # returns the length of measure distance
+    data = []
+    with open(name, 'r') as file:
+        for line in file:
+            NewList = line.rstrip('\n').split(',')
+            if len(NewList) == 2:
+                data.append(float(NewList[0]))
+
+    del NewList
+    MaxValue = max(data)
+    MinValue = min(data)
+    del data
+    DistanceLength = MaxValue - MinValue
+    return DistanceLength
 
 def OpeningFile3(name):  # returns the input data as a list of the lists
     data3 = []
@@ -119,14 +129,14 @@ def Rp(AverageLine, data):      # calculate value of Rp parameter for the chosen
     return round(Rp, 4)
 
 
-def Rv(AverageLine, data):
+def Rv(AverageLine, data):      # calculate value of Rv parameter for the chosen file
     MinimalValue = min(data)
     Rv = AverageLine - MinimalValue
 
     return round(Rv, 4)
 
 
-def Rt(data):
+def Rt(data):                   # calculate value of Rt parameter for the chosen file
 
     MinimalValue = abs(min(data))
     MaximalValue = abs(max(data))
@@ -135,7 +145,7 @@ def Rt(data):
     return round(Rt, 4)
 
 
-def Rz(AverageLine, data):
+def Rz(AverageLine, data):      # calculate value of Rz parameter for the chosen file
     NewList = []
     Sum = 0
 
@@ -153,13 +163,5 @@ def Rz(AverageLine, data):
     return round(Rz, 4)
 
 
-"""
-don't use data3
-
-def Rsm(data3):  # calculate value of Rsm parameter for the chosen file
-    j = 0
-    Value = data3[0][1]
-    for value in data3:
-        if value[1]
-    return Value
-    """
+def Rsm(AverageLine, Rz, DistanceLength, data):  # calculate value of Rsm parameter for the chosen file
+ 

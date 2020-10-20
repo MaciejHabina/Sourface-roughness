@@ -6,19 +6,19 @@ nameOfFile = input("Enter the full file name to surface roughness analysis: ")
 data = functions.OpeningFile(nameOfFile)
 # data2 = functions.OpeningFile2(nameOfFile)
 # data3 = functions.OpeningFile3(nameOfFile)
+DistanceLength = functions.OpeningFileLength(nameOfFile)
 
 Ra = functions.Ra(data)
 Rq = functions.Rq(data)
 Rsk = functions.Rsk(Rq, data)
 Rku = functions.Rku(Rq, data)
-AverageLine = functions.AverageLine(data)           # strasznie długo liczy  tę linię średnią
+AverageLine = functions.AverageLine(data)
 # Rsm = functions.Rsm(data3)
 Rp = functions.Rp(AverageLine, data)
 Rv = functions.Rv(AverageLine, data)
 Rt = functions.Rt(data)
 Rz = functions.Rz(AverageLine, data)
 
-# print("Value of an average line is: ", AverageLine)
 
 print("Ra: ", Ra)
 print("Rq: ", Rq)
@@ -27,6 +27,4 @@ print("Rp: ", Rp)
 print("Rv: ", Rv)
 print("Rt: ", Rt)
 print("Rku: ", Rku)
-
 print("Rz: ", Rz)
-input()
